@@ -42,7 +42,7 @@ Public Enum CallConv
 End Enum
 ' ----==== Oleaut32 Deklarationen ====----
 'https://docs.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-dispcallfunc
-Private Declare Function DispCallFunc Lib "Oleaut32" (ByVal pvInstance As LongPtr, ByVal oVft As Long, ByVal cc As Long, ByVal vtReturn As EVbVarType, ByVal cActuals As Long, ByVal prgvt As LongPtr, ByVal prgpvarg As LongPtr, ByVal pvargResult As LongPtr) As Long
+Private Declare Function DispCallFunc Lib "oleaut32" (ByVal pvInstance As LongPtr, ByVal oVft As Long, ByVal cc As Long, ByVal vtReturn As EVbVarType, ByVal cActuals As Long, ByVal prgvt As LongPtr, ByVal prgpvarg As LongPtr, ByVal pvargResult As LongPtr) As Long
 
 Private m_Com    As ComInterface
 Private m_Name   As String
@@ -56,6 +56,10 @@ Friend Sub New_(aComIntfc As ComInterface, ByVal aName As String, ByVal aIndex A
     m_VOfst = m_Index * MPtr.LongPtr_Size: m_RType = ReturnType
     Set m_VarRet = New VVariant: m_VarRet.New_ ReturnType
 End Sub
+
+'Public Function ComIntfcFunction(aComIntfc As ComInterface, ByVal aName As String, ByVal aIndex As Long, ByVal ReturnType As EVbVarType) As ComIntfcFunction
+'    Set ComIntfcFunction = New ComIntfcFunction: ComIntfcFunction.New_ aComIntfc, aName, aIndex, ReturnType
+'End Function
 
 Public Property Get Name() As String
     Name = m_Name

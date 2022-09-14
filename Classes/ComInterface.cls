@@ -27,6 +27,9 @@ Private Sub Class_Initialize()
     Set Func = New ComIntfcFunction: Func.New_ Me, "AddRef", i, EVbVarType.vbULong:        m_Funx.Add Func: i = i + 1 ' 1
     Set Func = New ComIntfcFunction: Func.New_ Me, "Release", i, EVbVarType.vbULong:       m_Funx.Add Func ': i = i + 1 ' 2
 End Sub
+'Public Function ComInterface(aIID As Guid, Optional aName As String) As ComInterface
+'    Set ComInterface = New ComInterface: ComInterface.New_ aIID, aName
+'End Function
 
 Private Sub Class_Terminate()
     If m_ppv = 0 Then Exit Sub
