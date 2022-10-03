@@ -46,6 +46,10 @@ Friend Sub New_(aIID As Guid, Optional aName As String)
     m_Name = aName
 End Sub
 
+'Public Function ComInterface(aIID As Guid, Optional aName As String) As ComInterface
+'    Set ComInterface = New ComInterface: ComInterface.New_ aIID, aName
+'End Function
+
 'Public Function Prepare(Optional aPPV As LongPtr = 0) As Boolean
 '    If m_ppv = 0 Then m_ppv = aPPV
 '    If m_ppv = 0 Then
