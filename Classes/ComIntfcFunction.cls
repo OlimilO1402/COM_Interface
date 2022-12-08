@@ -192,7 +192,7 @@ Private Function OleInvoke(ByVal pInterface As Long, ByVal lngCmd As Long, Param
 
         End If
 
-        If DispCallFunc(pInterface, lngCmd * 4, CC_STDCALL, m_RType, lngItem, VarPtr(oleTyp(0)), VarPtr(olePtr(0)), varRet) <> S_OK Then
+        If DispCallFunc(pInterface, lngCmd * 4, CC_STDCALL, VbVarType.vbLong, lngItem, VarPtr(oleTyp(0)), VarPtr(olePtr(0)), varRet) <> S_OK Then
             
             Debug.Print "Fehler beim Aufrufen der Interface-Funktion!"
             
