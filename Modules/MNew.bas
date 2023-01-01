@@ -9,3 +9,14 @@ Public Function ComIntfcFunction(aComIntfc As ComInterface, ByVal aName As Strin
     Set ComIntfcFunction = New ComIntfcFunction: ComIntfcFunction.New_ aComIntfc, aName, aIndex, ReturnType
 End Function
 
+Public Function VVariant(aValue) As VVariant
+    'Create a VVariant-object with a Variant
+    Set VVariant = New VVariant: VVariant.New_ aValue
+End Function
+
+Public Function VVariantVt(vt As EVbVarType, aValue) As VVariant
+    'Create a VVariant-object with a Variant and set the vartype yourself,
+    'like e.g. give a signed Long and set vt to unsigned Long
+    Set VVariantVt = New VVariant: VVariantVt.NewVt vt, aValue
+End Function
+
